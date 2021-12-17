@@ -31,12 +31,12 @@ mysqli_select_db($conn, $dbname) or die(mysqli_error($conn));
 
 
 // Creating new table and storing .json data
-foreach($result as $row) {
+foreach($result as $item) {
     $table = "INSERT INTO $dbtable(userId, id, title, completed)
-              VALUES ('". $row['userId'] ."', 
-                      '". $row['id'] ."', 
-                      '". $row['title'] ."', 
-                      '". $row['completed'] ."')";
+              VALUES ('". $item['userId'] ."', 
+                      '". $item['id'] ."', 
+                      '". $item['title'] ."', 
+                      '". $item['completed'] ."')";
 
 
     mysqli_query($conn, $table);
